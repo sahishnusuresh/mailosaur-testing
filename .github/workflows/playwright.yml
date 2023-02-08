@@ -27,7 +27,7 @@ jobs:
         retention-days: 30
     - name: Slack Notification on Failure
       if: failure()
-      uses: rtCamp/action-slack-notify@v1
+      uses: rtCamp/action-slack-notify@v2
       with:
         args: failure
       env:

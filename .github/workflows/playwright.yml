@@ -38,3 +38,14 @@ jobs:
         SLACK_MESSAGE: "A workflow has failed on repository ${{ github.repository }}."
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL}}
         SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+    - name: Slack notification on success
+      if: success()
+       uses: rtCamp/action-slack-notify@v2
+      with:
+        args: success
+      env:
+        SLACK_CHANNEL: testing
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN}}
+        SLACK_MESSAGE: "A workflow has succeeded on repository ${{ github.repository }}."
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL}}
+        SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK

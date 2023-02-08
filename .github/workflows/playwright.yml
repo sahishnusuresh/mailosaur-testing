@@ -25,6 +25,8 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+    - name: testing secrets
+      run: echo ${{secrest.SLACK_TOKEN}}
     - name: Slack Notification on Failure
       if: failure()
       uses: rtCamp/action-slack-notify@v2

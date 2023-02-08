@@ -3,7 +3,15 @@ import MailosaurClient from 'mailosaur';
 import MailoSaurClient from "mailosaur"
 import fetch from "node-fetch"
 import dotenv from 'dotenv'
-const prefix="HELLO5"
+const randomname=(num)=>{
+  let str=''
+  for(let i=0;i<num;i++){
+    let random=Math.floor(Math.random()*27)
+    str+=String.fromCharCode(97+random)
+  }
+  return str;
+}
+const prefix=randomname(7)
 dotenv.config()
 const server_id=process.env.server_id
 const api_key=process.env.api_key

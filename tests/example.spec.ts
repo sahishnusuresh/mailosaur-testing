@@ -19,7 +19,7 @@ const company_name="oslash"
 
 test('has title', async ({ page }) => {
   await page.goto('https://app.oslash.com/login/');
-  const email=`${prefix}-prod-bot@${server_id}.mailosaur.net`
+  const email=`${prefix}-prod-bot@${server_id}.mailosaur.nets`
   await page.locator('input#email').fill(email)
   const testdate=new Date()
   await page.getByRole('button',{name:"Send"}).click()

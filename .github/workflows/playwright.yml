@@ -26,10 +26,10 @@ jobs:
         path: playwright-report/
         retention-days: 30
     - name: Slack Notification on Failure
-        if: failure()
-          uses: rtCamp/action-slack-notify@v2
-        with:
-          args: failure
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_TOKEN}}
-          SLACK_MESSAGE: "A workflow has failed on repository ${{ github.repository }}."
+      if: failure()
+        uses: rtCamp/action-slack-notify@v2
+      with:
+        args: failure
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_TOKEN}}
+        SLACK_MESSAGE: "A workflow has failed on repository ${{ github.repository }}."

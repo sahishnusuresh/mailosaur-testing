@@ -34,7 +34,7 @@ jobs:
         args: failure
       env:
         SLACK_CHANNEL: testing
-        SLACK_WEBHOOK: ${{ secrets.SLACK_TOKEN}}
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN}}
         SLACK_MESSAGE: "A workflow has failed on repository ${{ github.repository }}."
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL}}
         SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK

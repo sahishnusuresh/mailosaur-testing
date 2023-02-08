@@ -26,8 +26,8 @@ jobs:
         path: playwright-report/
         retention-days: 30
     - name: Slack Notification on Failure
-      if: ${{failure()}}
-      uses: rtCamp/action-slack-notify@v2
+      if: failure()
+      uses: rtCamp/action-slack-notify@v1
       with:
         args: failure
       env:
